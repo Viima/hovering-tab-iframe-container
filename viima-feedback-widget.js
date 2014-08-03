@@ -74,6 +74,7 @@ $(document).mouseup(function (e)
     if (!container.is(e.target) // if the target of the click isn't the container...
         && container.has(e.target).length === 0) // ... nor a descendant of the container
     {
-        toggleViima();
+        $('#feedback-tab').css('left', '0px');
+        $('#feedback-tab #feedback-inner').css('left', '-700px');
     }
 });
