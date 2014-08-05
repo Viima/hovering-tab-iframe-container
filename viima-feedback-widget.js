@@ -6,7 +6,7 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, tabOffsetF
   }
 
   if(!tabImgUrl){
-    tabImgUrl = 'https://app.viima.com/static/img/feedback.png'
+    tabImgUrl = 'https://new.viima.com/wp-content/uploads/2014/08/feedback-tab.png'
   }
 
   if(!heightFactor){
@@ -86,6 +86,7 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, tabOffsetF
       $('#feedback-tab').css('left', width + 'px');
       $('#feedback-tab #feedback-inner').css('left', '0px');
       $('#feedback-tab #feedback-inner').css('bottom', containerOffset + 'px');
+      $('body').append('<div id="feedback-backdrop" style="position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 9999; background-color: #000; opacity: 0.7;"></div>');
     } else {
       closeViima();
     }
@@ -94,6 +95,7 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, tabOffsetF
   function closeViima() {
     $('#feedback-tab').css('left', '0px');
     $('#feedback-tab #feedback-inner').css('left', '-' + width + 'px');
+    $('#feedback-backdrop').remove();
   }
 
   //Hide the feedback widget on clicks outside the container
