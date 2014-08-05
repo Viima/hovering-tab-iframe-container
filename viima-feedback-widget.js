@@ -22,11 +22,10 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
   }
 
   if(!tabOffsetFromBottom){
-    //Calculated based on the actual visible screen size, just applying a percentage for bottom doesn't do the trick
     tabOffsetFromBottom = 0.4;
   }
 
-  //Calculate width and height for container based on visible screen size
+  //Calculate width, height and offsets based on visible screen size
   var height = heightFactor * window.innerHeight;
   var width = widthFactor * window.innerWidth;
   var containerOffset = (1-heightFactor)/2 * window.innerHeight;
@@ -36,9 +35,9 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
   document.body.insertAdjacentHTML('beforeend', '<div id="feedback-tab"><img src="'+ tabImgUrl +'" alt="Feedback"/><div id="feedback-inner"><iframe src="https://app.viima.com/' + viimaId + '"></iframe></div></div>');
 
   //Setting Basic CSS
-  document.getElementById("feedback-tab").style.cssText = 'position: fixed; bottom: ' + tabOffset + 'px; ' + side + ': 0; cursor: pointer; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s; z-index: 10000;';
-  document.getElementById("feedback-inner").style.cssText = 'position: fixed; bottom: ' + containerOffset + 'px; ' + side + ': -' + width + 'px; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s;  height: ' + height + 'px; width: ' + width +'px; overflow: hidden; z-index: 10000;';
-  document.getElementById("feedback-inner").getElementsByTagName('iframe')[0].style.cssText = 'height: 100%; width: 100%; z-index: 10001;';
+  document.getElementById("feedback-tab").style.cssText = 'position: fixed; bottom: ' + tabOffset + 'px; ' + side + ': 0; cursor: pointer; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s; z-index: 100000;';
+  document.getElementById("feedback-inner").style.cssText = 'position: fixed; bottom: ' + containerOffset + 'px; ' + side + ': -' + width + 'px; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s;  height: ' + height + 'px; width: ' + width +'px; overflow: hidden; z-index: 100000;';
+  document.getElementById("feedback-inner").getElementsByTagName('iframe')[0].style.cssText = 'height: 100%; width: 100%; z-index: 100001;';
 
   //Extra style settings
   if(borderColor){
@@ -62,13 +61,13 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
       document.getElementById('feedback-tab').style.bottom = containerOffset + 'px';
       document.getElementById('feedback-inner').style.left = '0px';
       document.getElementById('feedback-inner').style.bottom = containerOffset + 'px';
-      document.body.insertAdjacentHTML('beforeend', '<div id="feedback-backdrop" style="position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 9999; background-color: #000; opacity: 0.7;"></div>');
+      document.body.insertAdjacentHTML('beforeend', '<div id="feedback-backdrop" style="position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 99999; background-color: #000; opacity: 0.7;"></div>');
     } else if (side === 'right' && document.getElementById('feedback-inner').style.right.indexOf('-') != -1){
       document.getElementById('feedback-tab').style.right = width + 'px';
       document.getElementById('feedback-tab').style.bottom = containerOffset + 'px';
       document.getElementById('feedback-inner').style.right = '0px';
       document.getElementById('feedback-inner').style.bottom = containerOffset + 'px';
-      document.body.insertAdjacentHTML('beforeend', '<div id="feedback-backdrop" style="position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 9999; background-color: #000; opacity: 0.7;"></div>');
+      document.body.insertAdjacentHTML('beforeend', '<div id="feedback-backdrop" style="position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 99999; background-color: #000; opacity: 0.7;"></div>');
     } else {
       closeViima();
     }
