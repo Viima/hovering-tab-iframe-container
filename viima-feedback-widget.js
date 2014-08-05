@@ -87,9 +87,13 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, tabOffsetF
       $('#feedback-tab #feedback-inner').css('left', '0px');
       $('#feedback-tab #feedback-inner').css('bottom', containerOffset + 'px');
     } else {
-      $('#feedback-tab').css('left', '0px');
-      $('#feedback-tab #feedback-inner').css('left', '-' + width + 'px');
+      closeViima();
     }
+  }
+
+  function closeViima() {
+    $('#feedback-tab').css('left', '0px');
+    $('#feedback-tab #feedback-inner').css('left', '-' + width + 'px');
   }
 
   //Hide the feedback widget on clicks outside the container
@@ -100,8 +104,7 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, tabOffsetF
       if (!container.is(e.target) // if the target of the click isn't the container...
           && container.has(e.target).length === 0) // ... nor a descendant of the container
       {
-          $('#feedback-tab').css('left', '0px');
-          $('#feedback-tab #feedback-inner').css('left', '-' + width + 'px');
+          closeViima();
       }
   });
 }
