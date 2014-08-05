@@ -61,13 +61,13 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
       document.getElementById('feedback-tab').style.bottom = containerOffset + 'px';
       document.getElementById('feedback-inner').style.left = '0px';
       document.getElementById('feedback-inner').style.bottom = containerOffset + 'px';
-      document.body.insertAdjacentHTML('beforeend', '<div id="feedback-backdrop" style="position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 99999; background-color: #000; opacity: 0.7;"></div>');
+      document.body.insertAdjacentHTML('beforeend', '<div id="feedback-backdrop" style="position: fixed; top: 0; bottom: 0; right: 0; left: 0; z-index: 99999; background-color: #000; opacity: 0.7;"></div>');
     } else if (side === 'right' && document.getElementById('feedback-inner').style.right.indexOf('-') != -1){
       document.getElementById('feedback-tab').style.right = width + 'px';
       document.getElementById('feedback-tab').style.bottom = containerOffset + 'px';
       document.getElementById('feedback-inner').style.right = '0px';
       document.getElementById('feedback-inner').style.bottom = containerOffset + 'px';
-      document.body.insertAdjacentHTML('beforeend', '<div id="feedback-backdrop" style="position: absolute; top: 0; bottom: 0; right: 0; left: 0; z-index: 99999; background-color: #000; opacity: 0.7;"></div>');
+      document.body.insertAdjacentHTML('beforeend', '<div id="feedback-backdrop" style="position: fixed; top: 0; bottom: 0; right: 0; left: 0; z-index: 99999; background-color: #000; opacity: 0.7;"></div>');
     } else {
       closeViima();
     }
@@ -83,6 +83,7 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
     }
     var backdrop = document.getElementById('feedback-backdrop');
     document.body.removeChild(backdrop);
+    document.getElementById('feedback-tab').style.bottom = tabOffset + 'px';
   }
 
   //Hide the feedback widget on clicks outside the container
