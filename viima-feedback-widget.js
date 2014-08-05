@@ -1,4 +1,4 @@
-function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabOffsetFromBottom, customClassForTab, borderColor, tabOpacity){
+function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabOffsetFromBottom, headerText, smallScreenTreshold, customClassForTab, borderColor, tabOpacity){
 
   //Initializing variables
   if(!viimaId){
@@ -25,6 +25,15 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
     tabOffsetFromBottom = 0.4;
   }
 
+  if(!smallScreenTreshold){
+    smallScreenTreshold = 640;
+  }
+
+  //If visible window size is smaller than the specified treshold, don't show the tool at all
+  if(window.innerWidth < smallScreenTreshold){
+    return false;
+  }
+
   //Calculate width, height and offsets based on visible screen size
   var height = heightFactor * window.innerHeight;
   var width = widthFactor * window.innerWidth;
@@ -33,6 +42,15 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
 
   //Appending tab to body
   document.body.insertAdjacentHTML('beforeend', '<div id="feedback-tab"><img src="'+ tabImgUrl +'" alt="Feedback"/><div id="feedback-inner"><iframe src="https://app.viima.com/' + viimaId + '"></iframe></div></div>');
+
+  //Append header text if it was input
+  if(headerText) {
+    document.getElementById('feedback-inner').insertAdjacentHTML('afterbegin', '<h3 id="feedback-header" style="color: #eeeeee; text-align: center; cursor: default;">'+ headerText +'</h3>');
+    document.getElementById('feedback-header').addEventListener('click', (function (e){
+      e.stopPropagation();
+      return false;
+    }));
+  }
 
   //Setting Basic CSS
   document.getElementById("feedback-tab").style.cssText = 'position: fixed; bottom: ' + tabOffset + 'px; ' + side + ': 0; cursor: pointer; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s; z-index: 100000;';
@@ -87,7 +105,7 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
   }
 
   //Hide the feedback widget on clicks outside the container
-  document.addEventListener('mouseup', (function (e)
+  document.addEventListener('click', (function (e)
   {
       var backdrop = document.getElementById('feedback-backdrop');
        // if the target of the click is outside the container, it has to be the backdrop..
