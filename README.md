@@ -3,6 +3,8 @@ Viima Feedback Widget
 
 This is the home of the Feedback Widget for the Viima App. Please note that you'll need a working Viima account to use the widget. Contact us if you'd like to have one ;)
 
+A live preview can be seen at http://new.viima.com
+
 
 **Basic usage:**
 
