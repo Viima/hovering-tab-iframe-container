@@ -1,4 +1,4 @@
-function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabOffsetFromBottom, headerText, smallScreenTreshold, customClassForTab, borderColor, tabOpacity){
+function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabOffsetFromBottom, headerText, smallScreenTreshold, tabOpacity){
 
   //Initializing variables
   if(!viimaId){
@@ -26,7 +26,7 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
   }
 
   if(!smallScreenTreshold){
-    smallScreenTreshold = 640;
+    smallScreenTreshold = 600;
   }
 
   //If visible window size is smaller than the specified treshold, don't show the tool at all
@@ -57,17 +57,8 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
   document.getElementById("feedback-inner").style.cssText = 'position: fixed; bottom: ' + containerOffset + 'px; ' + side + ': -' + width + 'px; -webkit-transition-duration: 0.3s; -moz-transition-duration: 0.3s; -o-transition-duration: 0.3s; transition-duration: 0.3s;  height: ' + height + 'px; width: ' + width +'px; overflow: hidden; z-index: 100000;';
   document.getElementById("feedback-inner").getElementsByTagName('iframe')[0].style.cssText = 'height: 100%; width: 100%; z-index: 100001;';
 
-  //Extra style settings
-  if(borderColor){
-    document.getElementById('feedback-inner').getElementsByTagName('iframe')[0].style.border = '3px solid ' + borderColor;
-  };
-
   if(tabOpacity){
      document.getElementById('feedback-tab').getElementsByTagName('img')[0].style.opacity = tabOpacity;
-  }
-
-  if(customClassForTab){
-    document.getElementById('feedback-tab').classList.add(customClassForTab);
   }
 
   document.getElementById('feedback-tab').addEventListener('click', toggleViima);
