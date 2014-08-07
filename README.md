@@ -18,7 +18,7 @@ A live preview can be seen at http://new.viima.com
   initiateViima('viimaId');
 </script>
 ```
-We recommend to do the initiation either at the end of your body or once the page has been otherwise loaded.
+We recommend to do the initiation either at the end of your body or once the page has been loaded.
 
 ###Settings
 **The library currently supports 9 settings**
