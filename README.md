@@ -6,24 +6,25 @@ This is the home of the Feedback Widget for the Viima App. Please note that you'
 A live preview can be seen at http://new.viima.com
 
 
-**Basic usage:**
+###Basic usage
 
-1) Download and include the library in the head of your HTML document:
+**1) Download and include the library in the head of your HTML document**
 
 ```<script src="viima-feedback-widget.js"></script>```
 
-2) Initiate the library:
+**2) Initiate the widget**
 ```
 <script type=text/javascript>
-  initiateViima('viima', '/img/feedback.png');
+  initiateViima('viimaId');
 </script>
 ```
 We recommend to do the initiation either at the end of your body or once the page has been otherwise loaded.
 
-**The library currently supports 9 parameter settings:**
-
-- These parameters have to be given to the initiation function in the right order (=same as below)
-- Any parameter can be left undefined
+###Settings
+**The library currently supports 9 settings**
+- These settings are given as arguments to the initiateViima() function
+- The order of the arguments is relevant. They have to be given in the same order as listed in the table below.
+- If an argument is undefined, the default value is used.
 
 |Parameter | Usage     | Accepted values | Default value |
 |----------|-----------|---------------|-----------------|
@@ -37,5 +38,6 @@ We recommend to do the initiation either at the end of your body or once the pag
 | **smallScreenTreshold** | The minimum resolution with which the tool can be used. When screen is samller, it remains hidden in order to not take the majority of the screen | Integer | 600 |
 |**tabOpacity**| If you'd like to make the image you're using a little less prominent, you can set the opacity value for that. | Floating point numbers between 0 and 1 ( Smaller values are more transparent) | null |
 
-
+###Browser Support
+**IE9+ and all modern browsers**
 *As of version 1.0 the widget is no longer dependent on jQuery or any other external library.*
