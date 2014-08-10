@@ -6,7 +6,7 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
   }
 
   if(!tabImgUrl){
-    tabImgUrl = 'https://new.viima.com/wp-content/uploads/2014/08/feedback-tab.png'
+    tabImgUrl = 'https://www.viima.com/wp-content/uploads/2014/08/feedback-tab.png'
   }
 
   if(side !== 'right'){
