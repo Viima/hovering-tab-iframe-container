@@ -76,7 +76,7 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
       document.getElementById('feedback-tab').style.bottom = containerOffset + 'px';
       document.getElementById('feedback-inner').style.right = '0px';
       document.getElementById('feedback-inner').style.bottom = containerOffset + 'px';
-      document.body.insertAdjacentHTML('beforeend', '<div id="feedback-backdrop" style="position: fixed; top: 0; bottom: 0; right: 0; left: 0; z-index: 99999; background-color: #000; opacity: 0.7;"></div>');
+      document.body.insertAdjacentHTML('beforeend', '<div id="feedback-backdrop" style="position: fixed; top: 0; bottom: 0; right: 0; left: 0; z-index: 99999; background-color: #000; opacity: 0.7;cursor: pointer;"></div>');
     } else {
       closeViima();
     }
