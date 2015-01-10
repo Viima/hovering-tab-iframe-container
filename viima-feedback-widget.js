@@ -1,8 +1,8 @@
-function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabOffsetFromBottom, headerText, smallScreenTreshold, tabOpacity){
+function initiateViima(iframeUrl, tabImgUrl, heightFactor, widthFactor, side, tabOffsetFromBottom, headerText, smallScreenTreshold, tabOpacity){
 
   //Initializing variables
-  if(!viimaId){
-    viimaId = 'viima'
+  if(!iframeUrl){
+    iframeUrl = 'https://app.viima.com/viima/'
   }
 
   if(!tabImgUrl){
@@ -41,7 +41,7 @@ function initiateViima(viimaId, tabImgUrl, heightFactor, widthFactor, side, tabO
   var tabOffset = tabOffsetFromBottom * window.innerHeight;
 
   //Appending tab to body
-  document.body.insertAdjacentHTML('beforeend', '<div id="feedback-tab"><img src="'+ tabImgUrl +'" alt="Feedback"/><div id="feedback-inner"><iframe src="https://app.viima.com/' + viimaId + '"></iframe></div></div>');
+  document.body.insertAdjacentHTML('beforeend', '<div id="feedback-tab"><img src="'+ tabImgUrl +'" alt="Feedback"/><div id="feedback-inner"><iframe src="'+ iframeUrl +'"></iframe></div></div>');
 
   //Append header text if it was input
   if(headerText) {
