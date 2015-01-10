@@ -1,7 +1,7 @@
 Viima Feedback Widget
 ===============
 
-This is the home of the Feedback Widget for the [Viima App](https://www.viima.com). Please note that you'll need a working Viima account to use the widget. Contact us if you'd like to have one ;)
+This is the home of the Viima Feedback Widget. It's a javascript library that adds a hovering tab that expands to show an iframe for the user. It was originally created to be used with the [Viima App](https://www.viima.com).
 
 **A live preview can be seen on the project page: http://viima.github.io/feedback-widget/**
 
@@ -15,7 +15,7 @@ This is the home of the Feedback Widget for the [Viima App](https://www.viima.co
 **2) Initiate the widget**
 ```
 <script type=text/javascript>
-  initiateViima('viimaId');
+  initiateViima('https://app.viima.com/viima/');
 </script>
 ```
 We recommend to do the initiation either at the end of your body or once the page has been loaded.
@@ -28,7 +28,7 @@ We recommend to do the initiation either at the end of your body or once the pag
 
 |Parameter | Usage     | Accepted values | Default value |
 |----------|-----------|---------------|-----------------|
-|**viimaId** | Your viimaId, i.e. the last part of the URL to access your Viima app | String | viima |
+|**iframeUrl** | The URL of the content you want to show in the iframe | A valid, absolute URL | https://app.viima.com/viima/ |
 |**tabImgUrl** | The URL of the image you want to use as a trigger for the feedback tab | A valid, either relative or absolute URL | https://www.viima.com/wp-content/uploads/2014/08/feedback-tab.png |
 | **heightFactor** | The height of the feedback tool once the tab has been opened. Expressed as a percentage of the height of the window | Floating point numbers between 0 and 1 | 0.8 |
 | **widthFactor** | The width of the feedback tool once the tab has been opened. Expressed as a percentage of the width of the window | Floating point numbers between 0 and 1 | 0.8 |
