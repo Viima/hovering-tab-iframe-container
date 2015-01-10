@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="stylesheets/pygment_trac.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
   <script type="text/javascript" src="javascripts/script.js"></script>
-  <script type="text/javascript" src="javascripts/viima-feedback-widget-1.0.min.js"></script>
+  <script type="text/javascript" src="javascripts/viima-feedback-widget-1.1.min.js"></script>
 
   <title>Viima Feedback widget</title>
   <meta name="description" content="Repository for the feedback tab widget of the Viima App">
@@ -41,7 +41,7 @@
 <h1><a name="viima-feedback-widget" class="anchor" href="#viima-feedback-widget"><span class="octicon octicon-link"></span></a>Viima Feedback widget</h1>
 
 
-<p>This is the home of the Feedback Widget for the <a href="https://www.viima.com/" target="_blank">Viima App</a>. Please note that you'll need a working Viima account to use the widget. Contact us if you'd like to have one ;)</p>
+<p>This is the home of the Viima Feedback Widget. It's a javascript library that adds a hovering tab icon that expands to show an iframe for the user. It was originally created to be used with the <a href="https://www.viima.com/" target="_blank">Viima App</a>.</p>
 <p><strong class="highlight">&#8672; A live preview can be seen on the left side of this page.</strong></p>
 
 <h3>
@@ -54,7 +54,7 @@
 <p><strong>2) Initiate the widget</strong></p>
 
 <pre><code>&lt;script type=text/javascript&gt;
-  initiateViima('viimaId');
+  initiateViima('https://app.viima.com/viima/');
 &lt;/script&gt;
 </code></pre>
 
@@ -78,16 +78,16 @@
 </tr></thead>
 <tbody>
 <tr>
-<td><strong>viimaId</strong></td>
-<td>Your viimaId, i.e. the last part of the URL to access your Viima app</td>
-<td>String</td>
-<td>viima</td>
+<td><strong>iframeUrl</strong></td>
+<td>The URL of the iframe you want the user to see.</td>
+<td>A valid, absolute URL</td>
+<td>https://app.viima.com/viima/</td>
 </tr>
 <tr>
 <td><strong>tabImgUrl</strong></td>
 <td>The URL of the image you want to use as a trigger for the feedback tab</td>
 <td>A valid, either relative or absolute URL</td>
-<td><a href="https://www.viima.com/wp-content/uploads/2014/08/feedback-tab.png">https://www.viima.com/wp-content/uploads/2014/08/feedback-tab.png</a></td>
+<td>https://www.viima.com/wp-content/uploads/2014/08/feedback-tab.png</td>
 </tr>
 <tr>
 <td><strong>heightFactor</strong></td>
@@ -165,7 +165,7 @@
             } catch(err) {}
           </script>
     <script type=text/javascript>
-       initiateViima('viima');
+       initiateViima();
     </script>
 
 </body>
