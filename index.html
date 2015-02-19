@@ -1,54 +1,160 @@
-<!DOCTYPE html>
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
 <html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="description" content="Viima Hovering tab iframe container : A js library that lets you add a hovering tab that contains an iframe">
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen">
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+  <script type="text/javascript" src="javascripts/viima-feedback-widget-1.1.min.js"></script>
 
-    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+  <title>Viima Feedback widget</title>
+  <meta name="description" content="Repository for the feedback tab widget of the Viima App">
 
-    <title>Viima Hovering tab iframe container</title>
-  </head>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
 
-  <body>
+</head>
 
-    <!-- HEADER -->
-    <div id="header_wrap" class="outer">
-        <header class="inner">
-          <a id="forkme_banner" href="https://github.com/Viima/hovering-tab-iframe-container">View on GitHub</a>
+<body>
 
-          <h1 id="project_title">Viima Hovering tab iframe container</h1>
-          <h2 id="project_tagline">A js library that lets you add a hovering tab that contains an iframe</h2>
+  <div class="wrapper">
+    <header>
+       <img id="viima-logo" src="https://www.viima.com/wp-content/uploads/2014/06/viima_logo_black.png" alt="Viima Logo in black"/>
+       <h1 class="title">Feedback widget</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">This is the home of the feedback widget for the Viima App</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/Viima/feedback-widget/tarball/master" class="download-button">Download .tar</a>
+          <a href="https://github.com/Viima/feedback-widget/zipball/master" class="download-button">Download .zip</a>
+          <a href="https://github.com/Viima/feedback-widget" class="code">View the Feedback widget on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+<article class="markdown-body">         
+<h1><a name="viima-feedback-widget" class="anchor" href="#viima-feedback-widget"><span class="octicon octicon-link"></span></a>Viima Feedback widget</h1>
 
-            <section id="downloads">
-              <a class="zip_download_link" href="https://github.com/Viima/hovering-tab-iframe-container/zipball/master">Download this project as a .zip file</a>
-              <a class="tar_download_link" href="https://github.com/Viima/hovering-tab-iframe-container/tarball/master">Download this project as a tar.gz file</a>
-            </section>
-        </header>
-    </div>
 
-    <!-- MAIN CONTENT -->
-    <div id="main_content_wrap" class="outer">
-      <section id="main_content" class="inner">
-        <h1>
-<a id="viima-feedback-widget" class="anchor" href="#viima-feedback-widget" aria-hidden="true"><span class="octicon octicon-link"></span></a>Viima Feedback widget</h1>
+<p>This is the home of the Viima Feedback Widget. It's a javascript library that adds a hovering tab icon that expands to show an iframe for the user. It was originally created to be used with the <a href="https://www.viima.com/" target="_blank">Viima App</a>.</p>
+<p><strong class="highlight">&#8672; A live preview can be seen on the left side of this page.</strong></p>
 
-<p>This is the page for the feedback tab widget of the Viima App and it's currently under construction.</p>
+<h3>
+<a name="user-content-basic-usage" class="anchor" href="#basic-usage" aria-hidden="true"><span class="octicon octicon-link"></span></a>Basic usage</h3>
 
-<p>For more details, contact us at <a href="mailto:contact@viima.com">contact@viima.com</a> or visit <a href="https://www.viima.com">Viima homepage</a></p>
-      </section>
-    </div>
+<p><strong>1) Download and include the library in the head of your HTML document</strong></p>
 
-    <!-- FOOTER  -->
-    <div id="footer_wrap" class="outer">
-      <footer class="inner">
-        <p class="copyright">Viima Hovering tab iframe container maintained by <a href="https://github.com/Viima">Viima</a></p>
-        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
-      </footer>
-    </div>
+<pre><code>&lt;script src="viima-feedback-widget.js"&gt;&lt;/script&gt;</code></pre>
 
-              <script type="text/javascript">
+<p><strong>2) Initiate the widget</strong></p>
+
+<pre><code>&lt;script type=text/javascript&gt;
+  initiateViima('https://app.viima.com/viima/');
+&lt;/script&gt;
+</code></pre>
+
+<p>We recommend to do the initiation either at the end of your body or once the page has been loaded.</p>
+
+<h3>
+<a name="user-content-settings" class="anchor" href="#settings" aria-hidden="true"><span class="octicon octicon-link"></span></a>Settings</h3>
+
+<p><strong>The library currently supports 9 settings</strong></p>
+
+<ul class="task-list">
+<li>These settings are given as arguments to the initiateViima() function</li>
+<li>The order of the arguments is relevant. They have to be given in the same order as listed in the table below.</li>
+<li>If an argument is undefined, the default value is used.</li>
+</ul><table>
+<thead><tr>
+<th>Parameter</th>
+<th>Usage</th>
+<th>Accepted values</th>
+<th>Default value</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><strong>iframeUrl</strong></td>
+<td>The URL of the iframe you want the user to see.</td>
+<td>A valid, absolute URL</td>
+<td>https://app.viima.com/viima/</td>
+</tr>
+<tr>
+<td><strong>tabImgUrl</strong></td>
+<td>The URL of the image you want to use as a trigger for the feedback tab</td>
+<td>A valid, either relative or absolute URL</td>
+<td>https://www.viima.com/wp-content/uploads/2014/08/feedback-tab.png</td>
+</tr>
+<tr>
+<td><strong>heightFactor</strong></td>
+<td>The height of the feedback tool once the tab has been opened. Expressed as a percentage of the height of the window</td>
+<td>Floating point numbers between 0 and 1</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td><strong>widthFactor</strong></td>
+<td>The width of the feedback tool once the tab has been opened. Expressed as a percentage of the width of the window</td>
+<td>Floating point numbers between 0 and 1</td>
+<td>0.8</td>
+</tr>
+<tr>
+<td><strong>side</strong></td>
+<td>Which side of the page should the tab be located on?</td>
+<td>String with a value of either 'left' or 'right'</td>
+<td>left</td>
+</tr>
+<tr>
+<td><strong>tabOffsetFromBottom</strong></td>
+<td>How far from the bottom of the page should the tab be located? Expressed as a percentage of the height of the window</td>
+<td>Floating point numbers between 0 and 1</td>
+<td>0.4</td>
+</tr>
+<tr>
+<td><strong>headerText</strong></td>
+<td>If this parameter is defined, a header wih the specified string is added to the top of the feedback tool</td>
+<td>String</td>
+<td>null</td>
+</tr>
+<tr>
+<td><strong>smallScreenTreshold</strong></td>
+<td>The minimum resolution with which the tool can be used. When the width of the screen is smaller than this value, the widget remains hidden in order to not take up the majority of the screen estate</td>
+<td>Integer</td>
+<td>600</td>
+</tr>
+<tr>
+<td><strong>tabOpacity</strong></td>
+<td>If you'd like to make the image you're using a little less prominent, you can set an opacity value for it</td>
+<td>Floating point numbers between 0 and 1 ( Smaller values are more transparent)</td>
+<td>null</td>
+</tr>
+</tbody>
+</table><h3>
+<a name="user-content-browser-support" class="anchor" href="#browser-support" aria-hidden="true"><span class="octicon octicon-link"></span></a>Browser Support</h3>
+
+<ul class="task-list">
+<li><strong>IE9+ and all modern browsers</strong></li>
+<li>As of version 1.0 the widget is no longer dependent on jQuery or any other external library</li>
+</ul>
+</article>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/Viima" class="avatar"><img src="https://avatars1.githubusercontent.com/u/4947841?v=2&amp;s=60" width="48" height="48"></a> <a href="https://github.com/Viima">Viima</a> maintains <a href="https://github.com/Viima/feedback-widget">Viima Feedback widget</a></p>
+
+
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/Viima/feedback-widget/tarball/master" class="tar">tar</a><a href="https://github.com/Viima/feedback-widget/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+            <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
@@ -58,7 +164,9 @@
             pageTracker._trackPageview();
             } catch(err) {}
           </script>
+    <script type=text/javascript>
+       initiateViima();
+    </script>
 
-
-  </body>
+</body>
 </html>
