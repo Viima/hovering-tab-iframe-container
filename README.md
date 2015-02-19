@@ -1,9 +1,9 @@
 Viima Feedback Widget
 ===============
 
-This is the home of the Viima Feedback Widget. It's a javascript library that adds a hovering tab that expands to show an iframe for the user. It was originally created to be used with the [Viima App](https://www.viima.com).
+This is the home of the Viima Hovering Tab iframe Container. It's a javascript library that adds a hovering tab that expands to show an iframe for the user. It was originally created to be used with the [Viima App](https://www.viima.com).
 
-**A live preview can be seen on the project page: http://viima.github.io/feedback-widget/**
+**A live preview can be seen on the project page: https://github.com/Viima/hovering-tab-iframe-container**
 
 
 ###Basic usage
