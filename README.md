@@ -10,10 +10,12 @@ This is the home of the Viima Hovering Tab iframe Container. It's a javascript l
 
 **1) Download and include the library in the head of your HTML document**
 
-```<script src="viima-feedback-widget.js"></script>```
+```javascript
+<script src="viima-feedback-widget.js"></script>
+```
 
 **2) Initiate the widget**
-```
+```javascript
 <script type=text/javascript>
   initiateViima('https://app.viima.com/viima/');
 </script>
