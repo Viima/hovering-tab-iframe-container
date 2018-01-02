@@ -2,11 +2,11 @@ function initiateViima(iframeUrl, tabImgUrl, heightFactor, widthFactor, side, ta
 
   //Initializing variables
   if(!iframeUrl){
-    iframeUrl = 'https://app.viima.com/viima/'
+    iframeUrl = 'https://app.viima.com/viima/viima/'
   }
 
   if(!tabImgUrl){
-    tabImgUrl = 'https://www.viima.com/wp-content/uploads/2014/08/feedback-tab.png'
+    tabImgUrl = 'http://viima.github.io/hovering-tab-iframe-container/images/feedback-tab-redheart.png'
   }
 
   if(side !== 'right'){
