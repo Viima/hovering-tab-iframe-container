@@ -6,7 +6,7 @@ This is the home of the Viima Hovering Tab iframe Container. It's a javascript l
 **A live preview can be seen on the project page: http://viima.github.io/hovering-tab-iframe-container/**
 
 
-###Basic usage
+### Basic usage
 
 **1) Download and include the library in the head of your HTML document**
 
@@ -22,7 +22,7 @@ This is the home of the Viima Hovering Tab iframe Container. It's a javascript l
 ```
 We recommend to do the initiation either at the end of your body or once the page has been loaded.
 
-###Settings
+### Settings
 **The library currently supports 9 settings**
 - These settings are given as arguments to the initiateViima() function
 - The order of the arguments is relevant. They have to be given in the same order as listed in the table below.
@@ -30,8 +30,8 @@ We recommend to do the initiation either at the end of your body or once the pag
 
 |Parameter | Usage     | Accepted values | Default value |
 |----------|-----------|---------------|-----------------|
-|**iframeUrl** | The URL of the content you want to show in the iframe | A valid, absolute URL | https://app.viima.com/viima/ |
-|**tabImgUrl** | The URL of the image you want to use as a trigger for the feedback tab | A valid, either relative or absolute URL | https://www.viima.com/wp-content/uploads/2014/08/feedback-tab.png |
+|**iframeUrl** | The URL of the content you want to show in the iframe | A valid, absolute URL | https://app.viima.com/viima/viima/ |
+|**tabImgUrl** | The URL of the image you want to use as a trigger for the feedback tab | A valid, either relative or absolute URL | http://viima.github.io/hovering-tab-iframe-container/images/feedback-tab-redheart.png |
 | **heightFactor** | The height of the feedback tool once the tab has been opened. Expressed as a percentage of the height of the window | Floating point numbers between 0 and 1 | 0.8 |
 | **widthFactor** | The width of the feedback tool once the tab has been opened. Expressed as a percentage of the width of the window | Floating point numbers between 0 and 1 | 0.8 |
 | **side** | Which side of the page should the tab be located on? | String with a value of either 'left' or 'right'| 'left' |
@@ -40,6 +40,6 @@ We recommend to do the initiation either at the end of your body or once the pag
 | **smallScreenTreshold** | The minimum resolution with which the tool can be used. When the width of the screen is smaller than this value, the widget remains hidden in order to not take up the majority of the screen estate | Integer | 600 |
 |**tabOpacity**| If you'd like to make the image you're using a little less prominent, you can set an opacity value for it | Floating point numbers between 0 and 1 ( Smaller values are more transparent) | null |
 
-###Browser Support
+### Browser Support
 - **IE9+ and all modern browsers**
 - As of version 1.0 the widget is no longer dependent on jQuery or any other external library
